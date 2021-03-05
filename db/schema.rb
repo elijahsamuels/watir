@@ -23,8 +23,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_025102) do
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
-    t.string "type"
-    t.integer "height"
+    t.string "height"
     t.datetime "last_watered"
     t.string "last_watered_amount"
     t.string "grow_zone"
