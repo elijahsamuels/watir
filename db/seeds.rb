@@ -79,3 +79,4 @@ Sensor.create!([
 p "Created #{Sensor.count} sensors"
 	
 # byebug
+
