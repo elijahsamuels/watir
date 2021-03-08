@@ -23,3 +23,6 @@ class Api::V1::PlantsController < ApplicationController
 	end
 
 end
+
+
+# rails g controller api/v1/Plants
