@@ -1,3 +1,3 @@
 class Sensor < ApplicationRecord
-	belongs_to :plant, optional: true
+	belongs_to :plant
 end
