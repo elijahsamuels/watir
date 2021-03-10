@@ -12,7 +12,7 @@ class Plant < ApplicationRecord
 	# instance method that handles one specific plant
 
 	def instance_to_json
-		{ 
+		{
 			id: self.id,
 			name: self.name,
 			height: self.height,
@@ -21,11 +21,12 @@ class Plant < ApplicationRecord
 			grow_zone: self.grow_zone,
 			notes: self.notes,
 			planted_date: self.planted_date,
-			farm: { 
-				farm: self.farm.name,
-				farm: self.farm.id,
-			},
-			sensor_id: self.sensor
+			farm: self.farm,	
+			sensor: self.sensor
+			# farm: { 
+			# 	farm: self.farm.name,
+			# 	farm: self.farm.id,
+			# },
 			}
 	end 
 	

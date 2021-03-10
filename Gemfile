@@ -24,6 +24,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'dotenv-rails'
 gem 'active_model_serializers' 
 
+# this is the gem to connect Ruby to the RPi, relay, sensor and pump
+# gem 'rpi_gpio' #seems to have a problem loading?
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 

@@ -9,6 +9,7 @@ class Api::V1::PlantsController < ApplicationController
 	end
 
 	def create
+		byebug
 		plant = Plant.new(plant_params)
 		if plant.save
 			render json: plant, status: :accepted
@@ -19,7 +20,7 @@ class Api::V1::PlantsController < ApplicationController
 	
 	private
 	def plant_params
-		params.require(plant).permit(:name, :height, :last_watered, :last_watered_amount, :grow_zone, :notes, :planted_date, :farm_id, :created_at, :updated_at)
+		params.require(plant).permit(:name, :height, :last_watered, :last_watered_amount, :grow_zone, :notes, :planted_date, :farm_id, :created_at, :updated_at, :sensor)
 	end
 
 end
