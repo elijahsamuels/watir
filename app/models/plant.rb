@@ -1,6 +1,6 @@
 class Plant < ApplicationRecord
 	belongs_to :farm
-	has_one :sensor
+	has_many :sensor
 
 	#class method that handles array of plants
 	def self.arr_to_json
