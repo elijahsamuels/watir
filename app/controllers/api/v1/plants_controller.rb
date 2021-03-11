@@ -10,7 +10,7 @@ class Api::V1::PlantsController < ApplicationController
 
 	def create
 		plant = Plant.new(plant_params)
-		byebug
+		# byebug
 		if plant.save
 			Sensor.create(sensor_type: params[:sensor], mac_address: params[:mac_address], plant_id: plant.id)
 			render json: plant, status: :accepted
@@ -23,7 +23,7 @@ class Api::V1::PlantsController < ApplicationController
 	def plant_params
 		params.require(:plant).permit(:name, :height, :last_watered, :last_watered_amount, :grow_zone, :notes, :planted_date, :farm_id, :created_at, :updated_at, :sensor)
 	end
-
+``
 end
 
 
