@@ -18,7 +18,14 @@ class Api::V1::PlantsController < ApplicationController
 			render json: {errors: plant.errors.full_messages}, status: :unprocessible_entity
 		end
 	end
-	
+
+	def update
+		plant = Plant.find_by(id: params[:id])
+		plant.update(plant_params)
+		# byebug
+	end
+
+		
 	private
 	def plant_params
 		params.require(:plant).permit(:name, :height, :last_watered, :last_watered_amount, :grow_zone, :notes, :planted_date, :farm_id, :created_at, :updated_at, :sensor)
