@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_184710) do
+ActiveRecord::Schema.define(version: 2021_03_12_181610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_184710) do
     t.string "last_watered_amount"
     t.string "grow_zone"
     t.string "notes"
-    t.datetime "planted_date"
+    t.string "planted_date"
     t.integer "farm_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

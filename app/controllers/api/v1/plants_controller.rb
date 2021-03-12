@@ -9,20 +9,20 @@ class Api::V1::PlantsController < ApplicationController
 	end
 
 	def create
-		plant = Plant.new(plant_params)
 		# byebug
+		plant = Plant.new(plant_params)
 		if plant.save
-			Sensor.create(sensor_type: params[:sensor], mac_address: params[:mac_address], plant_id: plant.id)
+			Sensor.create(sensor_type: params[:sensor], mac_address: params[:mac_address], plant_id: plant.id) 
 			render json: plant, status: :accepted
 		else
 			render json: {errors: plant.errors.full_messages}, status: :unprocessible_entity
 		end
 	end
-
+	
 	def update
+		# byebug
 		plant = Plant.find_by(id: params[:id])
 		plant.update(plant_params)
-		# byebug
 	end
 
 		
