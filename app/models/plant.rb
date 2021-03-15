@@ -2,6 +2,8 @@ class Plant < ApplicationRecord
 	belongs_to :farm
 	has_many :sensor
 
+	validates :name, presence: true
+
 	#class method that handles array of plants
 	def self.arr_to_json
 		self.all.map do |data|
