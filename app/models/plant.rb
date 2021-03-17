@@ -15,22 +15,21 @@ class Plant < ApplicationRecord
 
 	def instance_to_json
 		{
-			id: self.id,
-			name: self.name,
-			height: self.height,
-			last_watered: self.last_watered,
-			last_watered_amount: self.last_watered_amount,
-			grow_zone: self.grow_zone,
-			notes: self.notes,
-			planted_date: self.planted_date,
-			farm: self.farm,	
-			sensor: self.sensor
-			# farm: { 
-			# 	farm: self.farm.name,
-			# 	farm: self.farm.id,
-			# },
-			}
+		id: self.id,
+		name: self.name,
+		height: self.height,
+		last_watered: self.last_watered,
+		last_watered_amount: self.last_watered_amount,
+		grow_zone: self.grow_zone,
+		notes: self.notes,
+		planted_date: self.planted_date,
+		farm: self.farm,	
+		sensor: self.sensor
+		# farm: { 
+		# 	farm: self.farm.name,
+		# 	farm: self.farm.id,
+		# },
+		}
 	end 
-	
 
 end

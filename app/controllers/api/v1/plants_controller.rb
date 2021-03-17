@@ -1,15 +1,11 @@
 class Api::V1::PlantsController < ApplicationController
 
 	def index
-		# byebug
 		plants = Plant.all
 		render json: Plant.arr_to_json
-		# render json: plants
-		# render json: PlantSerializer.new(plants)
 	end
 
 	def create
-		# byebug
 		plant = Plant.new(plant_params)
 		if plant.save
 			Sensor.create(sensor_type: params[:sensor], mac_address: params[:mac_address], plant_id: plant.id) 
@@ -20,18 +16,39 @@ class Api::V1::PlantsController < ApplicationController
 	end
 	
 	def update
-		# byebug
 		plant = Plant.find_by(id: params[:id])
 		plant.update(plant_params)
+		# plant.farm.name = plant_params[:farm][:name]
+		render json: plant, status: :accepted
+
+	end
+	
+	
+	def destroy
+		plant = Plant.find_by(id: params[:id])
+		plant.destroy
 	end
 
 		
 	private
-	def plant_params
-		params.require(:plant).permit(:name, :height, :last_watered, :last_watered_amount, :grow_zone, :notes, :planted_date, :farm_id, :created_at, :updated_at, :sensor)
-	end
-``
+		
+		def plant_params
+			params.require(:plant).permit(
+				:name,
+				:height,
+				:last_watered,
+				:last_watered_amount,
+				:grow_zone,
+				:notes,
+				:planted_date,
+				:farm_id,
+				:created_at,
+				:updated_at,
+				:sensor, 
+				# farm: (
+				# 	:name
+				# 	)
+				)
+		end
+
 end
-
-
-# rails g controller api/v1/Plants
