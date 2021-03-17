@@ -19,7 +19,7 @@ class Api::V1::PlantsController < ApplicationController
 		plant = Plant.find_by(id: params[:id])
 		plant.update(plant_params)
 		# plant.farm.name = plant_params[:farm][:name]
-		render json: plant, status: :accepted
+		render json: plant.instance_to_json, status: :accepted
 
 	end
 	

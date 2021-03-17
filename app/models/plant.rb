@@ -14,6 +14,7 @@ class Plant < ApplicationRecord
 	# instance method that handles one specific plant
 
 	def instance_to_json
+		# byebug
 		{
 		id: self.id,
 		name: self.name,
